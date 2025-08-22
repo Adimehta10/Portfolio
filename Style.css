@@ -60,8 +60,15 @@ h3{font-size:clamp(1.1rem, 2.4vw, 1.3rem); margin:0 0 10px}
 .skip-link:focus{left:1rem;top:1rem;background:#000;color:#fff;padding:.5rem 1rem;border-radius:8px;z-index:1000}
 
 /* Hero */
-.hero{position:relative;padding:92px 0 34px;overflow:clip}
-.hero__grid{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+.hero{
+padding:90px 0 32px; /* tighter than before */
+}
+.hero__grid{
+display:grid;
+grid-template-columns: 1.2fr 0.9fr; /* text | image */
+gap:28px;
+align-items:center;
+}
 .code-pill{font-family:"JetBrains Mono",monospace;background:#081f36;border:1px solid var(--line);color:var(--grad-2);padding:6px 10px;border-radius:10px;display:inline-flex;align-items:center;gap:8px}
 .code-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
 .hero__title{font-weight:900;letter-spacing:-.02em;font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin:12px 0}
@@ -73,7 +80,11 @@ h3{font-size:clamp(1.1rem, 2.4vw, 1.3rem); margin:0 0 10px}
 .btn--primary:hover{filter:brightness(1.05)}
 .btn--ghost:hover{background:#ffffff14}
 .meta{list-style:none;padding:0;margin:14px 0;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
-.hero__photo{position:relative}
+.hero__photo{
+position:relative;
+justify-self:end; /* stay on the right, not centered /
+width:min(520px, 38vw); / reduce grid impact without shrinking file */
+}
 .card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,var(--panel),#0b2742);box-shadow:var(--shadow);padding:18px}
 .glass{background:linear-gradient(180deg, var(--glass), #0b2a4a99);backdrop-filter: blur(8px)}
 .hero__photo img{border-radius:14px}
@@ -90,6 +101,16 @@ h3{font-size:clamp(1.1rem, 2.4vw, 1.3rem); margin:0 0 10px}
 .checks{list-style:none;padding:0;margin:12px 0 0}
 .checks li{margin:8px 0;padding-left:26px;position:relative}
 .checks li::before{content:"✔";position:absolute;left:0;color:var(--ok)}
+.section{
+scroll-margin-top: 96px;
+}
+/* About offsets */
+#about.section{
+padding-top: 96px; /* pushes About down a bit */
+}
+#about .container{
+margin-top: 8px; /* small extra breathing space */
+}
 
 /* Timeline */
 .timeline{display:grid;gap:18px;margin-top:10px}
